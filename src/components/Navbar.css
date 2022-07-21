@@ -1,0 +1,26 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 50px;
+  /* background-color: rgba(0,0,0,.1); */
+}
+
+.nav-logo {
+  text-transform: uppercase;
+  color: #999;
+}
+
+.nav-links {
+}
+
+.nav-links a {
+  text-transform: uppercase;
+  margin-right: 20px;
+  color: #111;
+}
+
+.nav-links a.active {
+  color: #999;
+}

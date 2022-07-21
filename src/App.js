@@ -5,11 +5,13 @@ import About from './pages/About'
 import Movie from './pages/Movie'
 import Movies from './pages/Movies'
 import NotFound from './pages/NotFound'
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Navbar />
         <Switch>
           <Route exact path='/'>
             <Home />
