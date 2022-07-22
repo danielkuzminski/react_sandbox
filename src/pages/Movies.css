@@ -1,0 +1,48 @@
+.movies-header {
+  text-transform: uppercase;
+  color: #999;
+  font-weight: 100;
+  text-align: center;
+  margin: 10px auto;
+  padding: 10px 10px 20px;
+  border-bottom: 2px solid #999;
+  width: 90%;
+}
+
+.btn-add-movie {
+  outline: none;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  border: none;
+  background-color: #999;
+  color: #fff;
+  border-radius: 5px;
+  display: block;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.btn-add-movie:hover {
+  box-shadow: 0 0 10px #999;
+}
+
+.btn-add-movie:active {
+  transform: scale(.95);
+}
+
+.movie-container {
+  padding: 20px;
+}
+
+.movie-container h3 {
+  text-transform: uppercase;
+  color: #999;
+}
+
+.movie-container h5 {
+}
+
+.movie-container p {
+  margin-top: 5px;
+}
