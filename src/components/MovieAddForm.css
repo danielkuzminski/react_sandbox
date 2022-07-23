@@ -5,7 +5,7 @@
   z-index: 10;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.85);
 }
 
 .add-form-container {
@@ -50,5 +50,15 @@
   border-radius: 5px;
   color: #fff;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.close-form {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  aspect-ratio: 1/1;
+  font-size: 1rem;
   cursor: pointer;
 }

@@ -18,9 +18,9 @@
 .nav-links a {
   text-transform: uppercase;
   margin-right: 20px;
-  color: #111;
+  color: #999;
 }
 
 .nav-links a.active {
-  color: #999;
+  color: #111;
 }
