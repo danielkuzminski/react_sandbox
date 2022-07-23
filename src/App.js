@@ -36,7 +36,7 @@ function App() {
           <Route path='/movies'>
             <Movies movies={movies} addMovie={addMovie} />
           </Route>
-          <Route path='/movies/:slug'>
+          <Route path='/movie/:slug'>
             <Movie />
           </Route>
           <Route path='*'>

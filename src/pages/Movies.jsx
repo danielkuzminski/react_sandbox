@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Movies.css'
 import MovieAddForm from '../components/MovieAddForm'
+import { Link } from 'react-router-dom'
 
 export default function Movies({movies, addMovie}) {
 
@@ -17,7 +18,7 @@ export default function Movies({movies, addMovie}) {
       {show && <MovieAddForm addMovie={addMovie} handleShow={handleShow} />}
       {movies.map((movie) => (
         <div className='movie-container' key={movie.slug}>
-          <h3>{movie.title}</h3>
+          <Link to={`/movie/${movie.slug}`} className='movie-link'><h3>{movie.title}</h3></Link>
           <h5>({movie.genre})</h5>
           <p>{movie.description}</p>
         </div>
