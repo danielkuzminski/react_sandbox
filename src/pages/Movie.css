@@ -1,0 +1,8 @@
+.single-movie-container {
+  display: flex;
+}
+
+.single-movie-container p, img {
+  max-width: 50%;
+  padding: 10px;
+}
