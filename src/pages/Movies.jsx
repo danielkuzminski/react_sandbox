@@ -23,8 +23,8 @@ export default function Movies() {
         setData(results)
         setIsPending(false)
       }
-    }).catch(err => {
-      setError(err.message)
+    }).catch(error => {
+      setError(error.message)
     })
   },[])
 
@@ -42,6 +42,7 @@ export default function Movies() {
       <h1 className='movies-header'>Movies to watch</h1>
       <button className='btn-add-movie' onClick={handleShow} >Add movie</button>
       {isPending && <div className='pending'>Loading... </div>}
+      {error}
       {show && <MovieAddForm handleShow={handleShow} />}
       {data && data.map((movie) => (
         <div className='movie-container' key={movie.slug}>
