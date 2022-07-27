@@ -35,6 +35,10 @@ export default function Movies() {
     setShow(!show)
   }
 
+  const handleDelete = (id) => {
+    projectFirestore.collection('movies').doc(id).delete()
+  }
+
   console.log(data);
 
   return (
@@ -46,7 +50,10 @@ export default function Movies() {
       {show && <MovieAddForm handleShow={handleShow} />}
       {data && data.map((movie) => (
         <div className='movie-container' key={movie.slug}>
-          <Link to={`/movie/${movie.id}`} className='movie-link'><h3>{movie.title}</h3></Link>
+          <div className='movie-title-container'>
+            <Link to={`/movie/${movie.id}`} className='movie-link'><h3>{movie.title}</h3></Link>
+            <span className='btn-delete'><i class="fa-solid fa-trash-can" onClick={() => {handleDelete(movie.id)}}></i></span>
+          </div>
           <h5>({movie.genre})</h5>
           <p className='movie-description'>{movie.description}</p>
         </div>
