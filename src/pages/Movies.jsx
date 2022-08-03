@@ -11,7 +11,8 @@ export default function Movies() {
 
   useEffect(() => {
     setIsPending(true)
-    projectFirestore.collection('movies').get().then((snapshot) => {
+
+    const unsub = projectFirestore.collection('movies').onSnapshot((snapshot) => {
       if(snapshot.empty){
         setError('No collection')
         setIsPending(false)
@@ -23,9 +24,13 @@ export default function Movies() {
         setData(results)
         setIsPending(false)
       }
-    }).catch(error => {
-      setError(error.message)
+    }, (err) => {
+      setError(err.message)
+      setIsPending(false)
     })
+
+    return () => unsub()
+
   },[])
 
 
