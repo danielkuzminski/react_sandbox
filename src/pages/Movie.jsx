@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import './Movie.css'
 import { useState, useEffect } from 'react'
 import { projectFirestore } from '../firebase/config'
@@ -7,6 +7,7 @@ import { projectFirestore } from '../firebase/config'
 export default function Movie() {
 
   const {id} = useParams()
+  const history = useHistory()
 
   const [data, setData] = useState(null)
   const [isPending, setIsPending] = useState(false)
@@ -35,7 +36,12 @@ export default function Movie() {
         <div>
           <h1 className='movies-header'>{data.title}</h1>
           <div className='single-movie-container'>
-            <p>{data.description}</p>
+            <div className='single-movie-description'>
+              <p>{data.description}</p>
+              <button className='go-back' onClick={() => {
+                history.goBack()
+              }}>go back</button>
+            </div>
             <img src={data.cover} alt="cover of a movie"/>
           </div>
         </div>

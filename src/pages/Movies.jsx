@@ -36,8 +36,14 @@ export default function Movies() {
   }
 
   const handleDelete = (id) => {
-    projectFirestore.collection('movies').doc(id).delete()
-  }
+
+    if (window.confirm("Are you sure you wish to delete?") === true) {
+      projectFirestore.collection('movies').doc(id).delete()
+      
+    } else {
+      ;
+    }
+      }
 
   console.log(data);
 
@@ -52,7 +58,7 @@ export default function Movies() {
         <div className='movie-container' key={movie.slug}>
           <div className='movie-title-container'>
             <Link to={`/movie/${movie.id}`} className='movie-link'><h3>{movie.title}</h3></Link>
-            <span className='btn-delete'><i class="fa-solid fa-trash-can" onClick={() => {handleDelete(movie.id)}}></i></span>
+            <span className='btn-delete'><i className="fa-solid fa-trash-can" onClick={() => {handleDelete(movie.id)}}></i></span>
           </div>
           <h5>({movie.genre})</h5>
           <p className='movie-description'>{movie.description}</p>
